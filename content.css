@@ -1,0 +1,122 @@
+#mp_container_extension div{
+	box-sizing: initial; display: block; margin: 0; padding: 0; border-radius: 0;
+	border: none; box-shadow: none; font-family: Arial; font-style: normal; font-weight: normal;
+}
+
+#mp_container_extension{
+	position: fixed; width: 470px; height: 330px;
+	top: 0; right: 0;
+	border: 1px solid #c4c4c4;
+	z-index: 10000001;
+}
+
+#mp_container_extension .up-ext{
+	height: 62px; width: 453px; background-color: #428bca; position: relative;
+	padding: 18px 0 0 17px;
+}
+
+#mp_container_extension #close_cross{
+	height: 12px; width: 12px; position: absolute; top: 9px; right: 11px;
+	cursor: pointer; 
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAABLGlDQ1BJQ0MgcHJvZmlsZQAAeNqtjrFKw1AUQM+LouJQKwRxcHiTKCi26mDGpC1FEKzVIcnWpKFKaRJeXtV+hKNbBxd3v8DJUXBQ/AL/QHHq4BAhg4MInuncw+VywajYdadhlGEQa9VuOtL1fDn7xAxTANAJs9RutQ4A4iSO+MHnKwLgedOuOw3+xnyYKg1MgO1ulIUgKkD/QqcaxBgwg36qQdwBpjpp10A8AKVe7i9AKcj9DSgp1/NBfABmz/V8MOYAM8h9BTB1dKkBakk6Ume9Uy2rlmVJu5sEkTweZToaZHI/DhOVJqqjoy6Q/wfAYr7YbjpyrWpZe+v8M67ny9zejxCAWHosWkE4VOffKoyd3+fixngZDm9helK03Su42YCF66KtVqG8BffjL8DGT/2b2yonAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3ggODyowdqFQtAAAAOJJREFUKM9t0D8rhWEYBvD7nMGfkulsSslmOItiMVlO2SwGH0DxGWQ6SRllwTdA8gUMOoNiZ0CZdAxKIeXPz/K+ub2913Td13U913M/T2ART7jCTFSABdziAfOBTX+4xGQKz+Iu+WuBNm6SeIJhtNBLeg/jZVMH/WRu4yDN95iu7rqK9yLwiZ+CP2Mpah7XwI7/+MJ6zjUTH4yIoUpPMyJG0Khr3ygay+bvgr9ipXpgGS9plS3sprmPThmew2My9zGAUZwm/RrtwEUSj9BKN0/gPPnHgT184BBjNb83hTO8ofsLHpSBlSIIey8AAAAASUVORK5CYII=);
+	background-repeat: no-repeat;	
+}
+
+#mp_container_extension .down-ext{
+	height: 249px; width: 100%; background-color: #fff;
+}
+
+#mp_container_extension .mp-chart{
+	width: 250px; float: left; height: 249px;
+}
+
+#mp_container_extension .mp-info{
+	width: 208px; float: left; height: 249px; background-color: #e7e7e7;
+	padding-left: 12px;
+}
+
+#mp_container_extension .mp-wrp-bigprice{
+	padding-top: 19px; height: 50px;
+}
+
+#mp_container_extension .big-price{
+	display: inline-block; float: left;
+}
+
+#mp_container_extension .big-price span{
+	display: inline-block; line-height: 1; vertical-align: top; font-family: Arial;
+}
+
+#mp_container_extension .big-price .course-icon{
+	font-weight: 400; font-size: 20px; color: #428bca;
+}
+
+#mp_container_extension .big-price .course-value{
+	font-weight: 700; color: #428bca; font-size: 45px; padding-top: 2px;
+}
+
+#mp_container_extension .big-price-change{
+	float: left; padding: 15px 0 0 7px;
+}
+
+#mp_container_extension .pch-arrow{
+	height:0;width:0; margin-left: 7px;
+}
+
+#mp_container_extension .pch-value{
+	font-weight: 400; font-size: 13px;
+}
+
+#mp_container_extension .big-change-down .pch-arrow{
+	border-top: 12px solid #ec5300; 
+	border-left: 7px solid transparent; border-right: 7px solid transparent;
+}
+
+#mp_container_extension .big-change-down .pch-value{
+	color: #ec5300;
+}
+
+#mp_container_extension .big-change-up .pch-arrow{
+	border-bottom: 12px solid #63c700;
+	border-left: 7px solid transparent; border-right: 7px solid transparent;
+}
+
+#mp_container_extension .big-change-up .pch-value{
+	color: #63c700;
+}
+
+#mp_container_extension .mp-wrp-price-details{
+	padding-top: 20px; padding-right: 6px;
+}
+
+#mp_container_extension .price-detail-row{
+	padding-top: 4px; height: 31px;
+}
+
+#mp_container_extension .price-detail-row.bott-bord{
+	border-bottom: 1px solid #d0d0d0;
+}
+
+#mp_container_extension .price-detail-col-left{
+	font-weight: 400; font-size: 13px; color: #909090; line-height: 31px;
+	padding-left: 5px; width: 100px; float: left; text-align: left;
+}
+
+#mp_container_extension .price-detail-col-right{
+	font-weight: 700; font-size: 13px; color: #428bca; line-height: 31px;
+	padding-right: 8px; float: right; text-align: right;
+}
+
+#mp_container_extension .mp-powered{
+	font-weight: 400; font-size: 12px; line-height: 1; color: #717171; 
+	padding-right: 14px; padding-top: 25px; height: 12px; text-align: right;
+}
+
+#mp_container_extension .mp-powered .powered-link{
+	font-weight: 400; font-size: 12px; line-height: 1; color: #57a7e6;
+	text-decoration: underline; cursor: pointer;
+}
+
+/*#mp_container_extension
+#mp_container_extension
+#mp_container_extension*/
