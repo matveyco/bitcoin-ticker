@@ -25,7 +25,7 @@ function updateExtField(e){
 			var today_open = parseFloat(dataBTC.today_open);
 			var today_change = (((curr_price - today_open)/today_open)*100).toFixed(2);
 			var arrow_direction = (curr_price >= today_open)?'up':'down';
-			document.getElementById('mp_container_extension').getElementsByClassName('course-value').item(0).innerHTML = curr_price;
+			document.getElementById('mp_container_extension').getElementsByClassName('course-value').item(0).innerHTML = curr_price.toFixed(2);
 			document.getElementById('mp_container_extension').getElementsByClassName('pch-value').item(0).innerHTML = today_change+'%';
 			var col_right = document.getElementById('mp_container_extension').getElementsByClassName('price-detail-col-right');
 			col_right.item(0).innerHTML = '$'+dataBTC.today_open;
@@ -74,7 +74,7 @@ function buildExtencion(e){
 				'Bitstamp.net'+
 			'</div>'+
 			'<iframe id="mp_build_chart" scrolling="no" frameborder="no" '+
-				'src="https://mining-profit.com/btc-chrt-extension" name="chart_frame" width="100%" height="180px">'+
+				'src="https://mining-profit.com/btc-chrt-extension" name="chart_frame" width="100%" height="220px">'+
 			'</iframe>'+
 		'</div>'+
 		'<div class="mp-info">'+
