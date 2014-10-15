@@ -31,9 +31,9 @@ function updateBadge(start){
 		  		}
 				var icon = new Image();
 				var up_down_rate = new Image();
-				icon.src = "mp-icon.png";
-				if(course_BTC){up_down_rate.src = "up.png";}
-				else{up_down_rate.src = "down.png";}
+				icon.src = "img/mp-icon.png";
+				if(course_BTC){up_down_rate.src = "img/up.png";}
+				else{up_down_rate.src = "img/down.png";}
 				icon.onload = function(){
 					up_down_rate.onload = function(){
 				  		var canvas = document.createElement('canvas');

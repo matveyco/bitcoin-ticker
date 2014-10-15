@@ -1,3 +1,5 @@
+var direction_course = '';
+
 var reqToMP = new XMLHttpRequest;
 reqToMP.open('GET', 'http://mining-profit.com/api/bitcoinprice', true);
 reqToMP.onload  = buildExtencion.bind(this);
@@ -20,14 +22,22 @@ function updateExtField(e){
 	if(document.getElementById('mp_container_extension')){
 		var prev_price = parseFloat(document.getElementById('mp_container_extension').getElementsByClassName('course-value').item(0).innerHTML);
 		if(curr_price != prev_price){
-			var today_change = (((curr_price - dataBTC.today_open)/dataBTC.today_open)*100).toFixed(2);
+			var today_open = parseFloat(dataBTC.today_open);
+			var today_change = (((curr_price - today_open)/today_open)*100).toFixed(2);
+			var arrow_direction = (curr_price >= today_open)?'up':'down';
 			document.getElementById('mp_container_extension').getElementsByClassName('course-value').item(0).innerHTML = curr_price;
-			document.getElementById('mp_container_extension').getElementsByClassName('pch-value').item(0).innerHTML = today_change;
+			document.getElementById('mp_container_extension').getElementsByClassName('pch-value').item(0).innerHTML = today_change+'%';
 			var col_right = document.getElementById('mp_container_extension').getElementsByClassName('price-detail-col-right');
-			col_right.item(0).innerHTML = dataBTC.today_open;
-			col_right.item(1).innerHTML = dataBTC.high;
-			col_right.item(2).innerHTML = dataBTC.low;
-			console.log('success!!');
+			col_right.item(0).innerHTML = '$'+dataBTC.today_open;
+			col_right.item(1).innerHTML = '$'+dataBTC.high;
+			col_right.item(2).innerHTML = '$'+dataBTC.low;
+			if(arrow_direction != direction_course){
+				var arrow_box = document.getElementById('mp_container_extension').getElementsByClassName('big-change-'+direction_course).item(0);
+				arrow_box.className = 'big-price-change big-change-'+arrow_direction;
+				direction_course = arrow_direction;
+				console.log('change direction');
+			}
+			console.log('success!!: direction: '+direction_course);
 		}
 	}
 }
@@ -35,13 +45,12 @@ function updateExtField(e){
 function buildExtencion(e){
 	var dataBTC = JSON.parse(e.target.responseText);
 	var curr_price =  parseFloat(dataBTC.last_price_BTCUSD);
-	if(!document.getElementById('mp_container_extension')){
-
-	}
-	var today_open = dataBTC.today_open;
+	var today_open = parseFloat(dataBTC.today_open);
 	var today_high = dataBTC.high;
 	var today_low = dataBTC.low;
 	var today_change = (((curr_price - today_open)/today_open)*100).toFixed(2);
+	var arrow_direction = (curr_price >= today_open)?'up':'down';
+	direction_course = arrow_direction;
 
 	var mp_container = document.createElement("div");
 	mp_container.setAttribute('id', 'mp_container_extension');
@@ -51,7 +60,7 @@ function buildExtencion(e){
 
 	up_ext.innerHTML = ''+
 		'<iframe id="mp_build_convertor" scrolling="no" frameborder="no" '+
-			'src="http://mining-profit.com/btc-cnv-extension" name="conv_frame" width="100%" height="44px">'+
+			'src="https://mining-profit.com/btc-cnv-extension" name="conv_frame" width="100%" height="44px">'+
 		'</iframe>'+
 		'<div id="mp_container_ext_close_cross"></div>';
 	mp_container.appendChild(up_ext);
@@ -65,7 +74,7 @@ function buildExtencion(e){
 				'Bitstamp.net'+
 			'</div>'+
 			'<iframe id="mp_build_chart" scrolling="no" frameborder="no" '+
-				'src="http://mining-profit.com/btc-chrt-extension" name="chart_frame" width="100%" height="180px">'+
+				'src="https://mining-profit.com/btc-chrt-extension" name="chart_frame" width="100%" height="180px">'+
 			'</iframe>'+
 		'</div>'+
 		'<div class="mp-info">'+
@@ -74,7 +83,7 @@ function buildExtencion(e){
 					'<span class="course-icon">$</span>'+
 					'<span class="course-value">'+curr_price.toFixed(2)+'</span>'+
 				'</div>'+
-				'<div class="big-price-change big-change-up">'+
+				'<div class="big-price-change big-change-'+arrow_direction+'">'+
 					'<div class="pch-arrow"></div>'+
 					'<div class="pch-value">'+today_change+'%</div>'+
 				'</div>'+
