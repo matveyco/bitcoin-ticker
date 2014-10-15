@@ -3,10 +3,41 @@ reqToMP.open('GET', 'http://mining-profit.com/api/bitcoinprice', true);
 reqToMP.onload  = buildExtencion.bind(this);
 reqToMP.send(null);
 
+var update_data = setInterval(function(){
+	updateReq();
+}, 60*1000);
+
+function updateReq(){
+	var reqToMP = new XMLHttpRequest;
+	reqToMP.open('GET', 'http://mining-profit.com/api/bitcoinprice', true);
+	reqToMP.onload  = updateExtField.bind(this);
+	reqToMP.send(null);
+}
+
+function updateExtField(e){
+	var dataBTC = JSON.parse(e.target.responseText);
+	var curr_price =  parseFloat(dataBTC.last_price_BTCUSD);
+	if(document.getElementById('mp_container_extension')){
+		var prev_price = parseFloat(document.getElementById('mp_container_extension').getElementsByClassName('course-value').item(0).innerHTML);
+		if(curr_price != prev_price){
+			var today_change = (((curr_price - dataBTC.today_open)/dataBTC.today_open)*100).toFixed(2);
+			document.getElementById('mp_container_extension').getElementsByClassName('course-value').item(0).innerHTML = curr_price;
+			document.getElementById('mp_container_extension').getElementsByClassName('pch-value').item(0).innerHTML = today_change;
+			var col_right = document.getElementById('mp_container_extension').getElementsByClassName('price-detail-col-right');
+			col_right.item(0).innerHTML = dataBTC.today_open;
+			col_right.item(1).innerHTML = dataBTC.high;
+			col_right.item(2).innerHTML = dataBTC.low;
+			console.log('success!!');
+		}
+	}
+}
 
 function buildExtencion(e){
 	var dataBTC = JSON.parse(e.target.responseText);
 	var curr_price =  parseFloat(dataBTC.last_price_BTCUSD);
+	if(!document.getElementById('mp_container_extension')){
+
+	}
 	var today_open = dataBTC.today_open;
 	var today_high = dataBTC.high;
 	var today_low = dataBTC.low;
@@ -19,17 +50,24 @@ function buildExtencion(e){
 	up_ext.setAttribute('class', 'up-ext');
 
 	up_ext.innerHTML = ''+
-		'<iframe id="convertor" scrolling="no" frameborder="no" '+
+		'<iframe id="mp_build_convertor" scrolling="no" frameborder="no" '+
 			'src="http://mining-profit.com/btc-cnv-extension" name="conv_frame" width="100%" height="44px">'+
 		'</iframe>'+
-		'<div id="close_cross"></div>';
+		'<div id="mp_container_ext_close_cross"></div>';
 	mp_container.appendChild(up_ext);
 
 	var down_ext = document.createElement('div');
 	down_ext.setAttribute('class', 'down-ext');
 
 	down_ext.innerHTML = ''+
-		'<div class="mp-chart"></div>'+
+		'<div class="mp-chart">'+
+			'<div class="mp-bitstamp-label">'+
+				'Bitstamp.net'+
+			'</div>'+
+			'<iframe id="mp_build_chart" scrolling="no" frameborder="no" '+
+				'src="http://mining-profit.com/btc-chrt-extension" name="chart_frame" width="100%" height="180px">'+
+			'</iframe>'+
+		'</div>'+
 		'<div class="mp-info">'+
 			'<div class="mp-wrp-bigprice">'+
 				'<div class="big-price">'+
@@ -66,7 +104,8 @@ function buildExtencion(e){
 	document.body.appendChild(mp_container);
 
 	var cont_in_DOM = document.getElementById('mp_container_extension');
-	document.getElementById('close_cross').onclick = function(){
+	document.getElementById('mp_container_ext_close_cross').onclick = function(){
 		document.body.removeChild(cont_in_DOM);
+		clearInterval(update_data);
 	}
 }

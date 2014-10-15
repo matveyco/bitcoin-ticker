@@ -1,5 +1,3 @@
-console.log("start background");
-
 updateBadge(1);
 
 chrome.alarms.create('updateIcon', {periodInMinutes: 1});
@@ -10,6 +8,7 @@ chrome.alarms.onAlarm.addListener(function(){
 
 chrome.browserAction.onClicked.addListener(function() {
 	chrome.tabs.executeScript(null, {file: "content.js"});
+
 });
 
 function updateBadge(start){

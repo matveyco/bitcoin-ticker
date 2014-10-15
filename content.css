@@ -1,6 +1,14 @@
-#mp_container_extension div{
-	box-sizing: initial; display: block; margin: 0; padding: 0; border-radius: 0;
+#mp_container_extension, #mp_container_extension div{
+	-webkit-box-sizing: content-box;-moz-box-sizing: content-box;box-sizing: content-box;
+	display: block; margin: 0; padding: 0; border-radius: 0;
 	border: none; box-shadow: none; font-family: Arial; font-style: normal; font-weight: normal;
+}
+
+#mp_container_extension div:before, #mp_container_extension div:after,
+#mp_container_extension:after, #mp_container_extension:before{
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
 }
 
 #mp_container_extension{
@@ -15,7 +23,7 @@
 	padding: 18px 0 0 17px;
 }
 
-#mp_container_extension #close_cross{
+#mp_container_ext_close_cross{
 	height: 12px; width: 12px; position: absolute; top: 9px; right: 11px;
 	cursor: pointer; 
 	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAABLGlDQ1BJQ0MgcHJvZmlsZQAAeNqtjrFKw1AUQM+LouJQKwRxcHiTKCi26mDGpC1FEKzVIcnWpKFKaRJeXtV+hKNbBxd3v8DJUXBQ/AL/QHHq4BAhg4MInuncw+VywajYdadhlGEQa9VuOtL1fDn7xAxTANAJs9RutQ4A4iSO+MHnKwLgedOuOw3+xnyYKg1MgO1ulIUgKkD/QqcaxBgwg36qQdwBpjpp10A8AKVe7i9AKcj9DSgp1/NBfABmz/V8MOYAM8h9BTB1dKkBakk6Ume9Uy2rlmVJu5sEkTweZToaZHI/DhOVJqqjoy6Q/wfAYr7YbjpyrWpZe+v8M67ny9zejxCAWHosWkE4VOffKoyd3+fixngZDm9helK03Su42YCF66KtVqG8BffjL8DGT/2b2yonAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3ggODyowdqFQtAAAAOJJREFUKM9t0D8rhWEYBvD7nMGfkulsSslmOItiMVlO2SwGH0DxGWQ6SRllwTdA8gUMOoNiZ0CZdAxKIeXPz/K+ub2913Td13U913M/T2ART7jCTFSABdziAfOBTX+4xGQKz+Iu+WuBNm6SeIJhtNBLeg/jZVMH/WRu4yDN95iu7rqK9yLwiZ+CP2Mpah7XwI7/+MJ6zjUTH4yIoUpPMyJG0Khr3ygay+bvgr9ipXpgGS9plS3sprmPThmew2My9zGAUZwm/RrtwEUSj9BKN0/gPPnHgT184BBjNb83hTO8ofsLHpSBlSIIey8AAAAASUVORK5CYII=);
@@ -23,15 +31,22 @@
 }
 
 #mp_container_extension .down-ext{
-	height: 249px; width: 100%; background-color: #fff;
+	height: 250px; width: 100%; background-color: #fff;
 }
 
 #mp_container_extension .mp-chart{
-	width: 250px; float: left; height: 249px;
+	width: 250px; float: left; height: 250px;
+}
+
+#mp_container_extension .mp-chart .mp-bitstamp-label{
+	margin: 18px auto 15px auto; width: 93px; padding: 4px 0; 
+	text-align: center; font: normal 700 12px/12px Arial; color: #fff;
+	background-color: #008ccc; border-radius: 3px;
+
 }
 
 #mp_container_extension .mp-info{
-	width: 208px; float: left; height: 249px; background-color: #e7e7e7;
+	width: 206px; float: right; height: 100%; background-color: #e7e7e7;
 	padding-left: 12px;
 }
 
