@@ -1,7 +1,7 @@
 var direction_course = '';
 
 var reqToMP = new XMLHttpRequest;
-reqToMP.open('GET', 'http://mining-profit.com/api/bitcoinprice', true);
+reqToMP.open('GET', '//mining-profit.com/api/bitcoinprice', true);
 reqToMP.onload  = buildExtencion.bind(this);
 reqToMP.send(null);
 
@@ -11,7 +11,7 @@ var update_data = setInterval(function(){
 
 function updateReq(){
 	var reqToMP = new XMLHttpRequest;
-	reqToMP.open('GET', 'http://mining-profit.com/api/bitcoinprice', true);
+	reqToMP.open('GET', '//mining-profit.com/api/bitcoinprice', true);
 	reqToMP.onload  = updateExtField.bind(this);
 	reqToMP.send(null);
 }
@@ -104,7 +104,7 @@ function buildExtencion(e){
 			'</div>'+
 			'<div class="mp-powered">'+
 				'Powered by '+
-				'<a href ="http://mining-profit.com/" class="powered-link">Mining-Profit.com</a>'+
+				'<a href ="https//mining-profit.com/" class="powered-link">Mining-Profit.com</a>'+
 			'</div>'+
 		'</div>';
 

@@ -13,7 +13,7 @@ chrome.browserAction.onClicked.addListener(function() {
 
 function updateBadge(start){
 	var req = new XMLHttpRequest;
-    req.open('GET', 'http://mining-profit.com/api/bitcoinprice', true);
+    req.open('GET', '//mining-profit.com/api/bitcoinprice', true);
     req.onload  = function(){
       	var jsonResponse = JSON.parse(req.responseText);
       	var curr_price_BTC =  parseFloat(jsonResponse.last_price_BTCUSD);
