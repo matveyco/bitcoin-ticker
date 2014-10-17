@@ -12,14 +12,14 @@
 }
 
 #mp_container_extension{
-	position: fixed; width: 550px; height: 360px;
+	position: fixed; width: 555px; height: 360px;
 	top: 0; right: 0;
 	border: 1px solid #c4c4c4;
 	z-index: 10000001;
 }
 
 #mp_container_extension .up-ext{
-	height: 62px; width: 533px; background-color: #428bca; position: relative;
+	height: 62px; width: 538px; background-color: #428bca; position: relative;
 	padding: 18px 0 0 17px;
 }
 
@@ -35,7 +35,7 @@
 }
 
 #mp_container_extension .mp-chart{
-	width: 330px; float: left; height: 280px;
+	width: 335px; float: left; height: 280px;
 }
 
 #mp_container_extension .mp-chart .mp-bitstamp-label{

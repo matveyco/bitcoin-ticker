@@ -1,7 +1,7 @@
 var direction_course = '';
 
 var reqToMP = new XMLHttpRequest;
-reqToMP.open('GET', '//mining-profit.com/api/bitcoinprice', true);
+reqToMP.open('GET', 'https://mining-profit.com/api/bitcoinprice', true);
 reqToMP.onload  = buildExtencion.bind(this);
 reqToMP.send(null);
 
@@ -11,7 +11,7 @@ var update_data = setInterval(function(){
 
 function updateReq(){
 	var reqToMP = new XMLHttpRequest;
-	reqToMP.open('GET', '//mining-profit.com/api/bitcoinprice', true);
+	reqToMP.open('GET', 'https://mining-profit.com/api/bitcoinprice', true);
 	reqToMP.onload  = updateExtField.bind(this);
 	reqToMP.send(null);
 }
@@ -73,7 +73,7 @@ function buildExtencion(e){
 			'<div class="mp-bitstamp-label">'+
 				'Bitstamp.net'+
 			'</div>'+
-			'<iframe id="mp_build_chart" scrolling="no" frameborder="no" '+
+			'<iframe id="mp_build_chart" scrolling="no" frameborder="no" style="margin-left: 5px;"'+
 				'src="https://mining-profit.com/btc-chrt-extension" name="chart_frame" width="100%" height="220px">'+
 			'</iframe>'+
 		'</div>'+
