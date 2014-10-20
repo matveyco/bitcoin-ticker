@@ -32,5 +32,10 @@
       "matches": ["*://*/*"],
       "css": ["content.css"]
     }
+  ],
+
+  "web_accessible_resources": [
+      "frame_convertor.html",
+      "frame_chart.html"
   ]
 }

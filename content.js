@@ -35,9 +35,7 @@ function updateExtField(e){
 				var arrow_box = document.getElementById('mp_container_extension').getElementsByClassName('big-change-'+direction_course).item(0);
 				arrow_box.className = 'big-price-change big-change-'+arrow_direction;
 				direction_course = arrow_direction;
-				console.log('change direction');
 			}
-			console.log('success!!: direction: '+direction_course);
 		}
 	}
 }
@@ -58,55 +56,74 @@ function buildExtencion(e){
 	var up_ext = document.createElement("div");
 	up_ext.setAttribute('class', 'up-ext');
 
-	up_ext.innerHTML = ''+
-		'<iframe id="mp_build_convertor" scrolling="no" frameborder="no" '+
-			'src="https://mining-profit.com/btc-cnv-extension" name="conv_frame" width="100%" height="44px">'+
-		'</iframe>'+
-		'<div id="mp_container_ext_close_cross"></div>';
+	var iframe_conv = document.createElement('iframe');
+    iframe_conv.src = chrome.runtime.getURL('frame_convertor.html')
+    iframe_conv.style.cssText = 'display:block;width:100%;height:44px;margin:0;padding:0;';
+    iframe_conv.setAttribute('scrolling', 'no');
+    iframe_conv.setAttribute('frameborder', 'no');
+
+    var button_close = document.createElement('div');
+    button_close.setAttribute('id', 'mp_container_ext_close_cross');
+
+    up_ext.appendChild(iframe_conv);
+    up_ext.appendChild(button_close);
+
 	mp_container.appendChild(up_ext);
 
+	
 	var down_ext = document.createElement('div');
 	down_ext.setAttribute('class', 'down-ext');
 
-	down_ext.innerHTML = ''+
-		'<div class="mp-chart">'+
-			'<div class="mp-bitstamp-label">'+
-				'Bitstamp.net'+
+	var mp_chart_box = document.createElement('div');
+	mp_chart_box.setAttribute('class', 'mp-chart');
+
+	var mp_label_bitstamp = document.createElement('div');
+	mp_label_bitstamp.setAttribute('class', 'mp-bitstamp-label');
+	mp_label_bitstamp.innerHTML = 'Bitstamp.net';
+
+	var iframe_chrt = document.createElement('iframe');
+    iframe_chrt.src = chrome.runtime.getURL('frame_chart.html')
+    iframe_chrt.style.cssText = 'display:block;width:100%;height:220px;margin:0 0 0 5px;padding:0;';
+    iframe_chrt.setAttribute('scrolling', 'no');
+    iframe_chrt.setAttribute('frameborder', 'no');
+
+    mp_chart_box.appendChild(mp_label_bitstamp);
+    mp_chart_box.appendChild(iframe_chrt);
+
+    var mp_info_box = document.createElement('div');
+    mp_info_box.setAttribute('class', 'mp-info');
+    mp_info_box.innerHTML = ''+
+		'<div class="mp-wrp-bigprice">'+
+			'<div class="big-price">'+
+				'<span class="course-icon">$</span>'+
+				'<span class="course-value">'+curr_price.toFixed(2)+'</span>'+
 			'</div>'+
-			'<iframe id="mp_build_chart" scrolling="no" frameborder="no" style="margin-left: 5px;"'+
-				'src="https://mining-profit.com/btc-chrt-extension" name="chart_frame" width="100%" height="220px">'+
-			'</iframe>'+
+			'<div class="big-price-change big-change-'+arrow_direction+'">'+
+				'<div class="pch-arrow"></div>'+
+				'<div class="pch-value">'+today_change+'%</div>'+
+			'</div>'+
 		'</div>'+
-		'<div class="mp-info">'+
-			'<div class="mp-wrp-bigprice">'+
-				'<div class="big-price">'+
-					'<span class="course-icon">$</span>'+
-					'<span class="course-value">'+curr_price.toFixed(2)+'</span>'+
-				'</div>'+
-				'<div class="big-price-change big-change-'+arrow_direction+'">'+
-					'<div class="pch-arrow"></div>'+
-					'<div class="pch-value">'+today_change+'%</div>'+
-				'</div>'+
+		'<div class="mp-wrp-price-details">'+
+			'<div class="price-detail-row bott-bord">'+
+				'<div class="price-detail-col-left">Today`s OPEN</div>'+
+				'<div class="price-detail-col-right">$'+today_open+'</div>'+
 			'</div>'+
-			'<div class="mp-wrp-price-details">'+
-				'<div class="price-detail-row bott-bord">'+
-					'<div class="price-detail-col-left">Today`s OPEN</div>'+
-					'<div class="price-detail-col-right">$'+today_open+'</div>'+
-				'</div>'+
-				'<div class="price-detail-row bott-bord">'+
-					'<div class="price-detail-col-left">Today`s HIGH</div>'+
-					'<div class="price-detail-col-right">$'+today_high+'</div>'+
-				'</div>'+
-				'<div class="price-detail-row">'+
-					'<div class="price-detail-col-left">Today`s LOW</div>'+
-					'<div class="price-detail-col-right">$'+today_low+'</div>'+
-				'</div>'+
+			'<div class="price-detail-row bott-bord">'+
+				'<div class="price-detail-col-left">Today`s HIGH</div>'+
+				'<div class="price-detail-col-right">$'+today_high+'</div>'+
 			'</div>'+
-			'<div class="mp-powered">'+
-				'Powered by '+
-				'<a href ="https://mining-profit.com/" class="powered-link">Mining-Profit.com</a>'+
+			'<div class="price-detail-row">'+
+				'<div class="price-detail-col-left">Today`s LOW</div>'+
+				'<div class="price-detail-col-right">$'+today_low+'</div>'+
 			'</div>'+
+		'</div>'+
+		'<div class="mp-powered">'+
+			'Powered by '+
+			'<a href ="https://mining-profit.com/" class="powered-link">Mining-Profit.com</a>'+
 		'</div>';
+
+	down_ext.appendChild(mp_chart_box);
+	down_ext.appendChild(mp_info_box);
 
 	mp_container.appendChild(down_ext);
 
