@@ -104,7 +104,7 @@ function buildExtencion(e){
 			'</div>'+
 			'<div class="mp-powered">'+
 				'Powered by '+
-				'<a href ="https//mining-profit.com/" class="powered-link">Mining-Profit.com</a>'+
+				'<a href ="https://mining-profit.com/" class="powered-link">Mining-Profit.com</a>'+
 			'</div>'+
 		'</div>';
 
