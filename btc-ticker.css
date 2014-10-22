@@ -1,3 +1,9 @@
+body{
+	min-width: 565px;
+	min-height: 370px;
+	padding: 5px;
+}
+
 #mp_container_extension, #mp_container_extension div{
 	-webkit-box-sizing: content-box;-moz-box-sizing: content-box;box-sizing: content-box;
 	display: block; margin: 0; padding: 0; border-radius: 0;

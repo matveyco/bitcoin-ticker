@@ -6,10 +6,16 @@ chrome.alarms.onAlarm.addListener(function(){
 	updateBadge(0);
 });
 
-chrome.browserAction.onClicked.addListener(function() {
-	chrome.tabs.executeScript(null, {file: "content.js"});
+// chrome.browserAction.onClicked.addListener(function() {
+// 	chrome.runtime.getBackgroundPage(function(pp){
+// 		console.log('wtf');
+// 	});
+// });
 
-});
+// chrome.browserAction.onClicked.addListener(function() {
+// 	chrome.tabs.executeScript(null, {file: "content.js"});
+
+// });
 
 function updateBadge(start){
 	var req = new XMLHttpRequest;
