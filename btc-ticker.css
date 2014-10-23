@@ -1,7 +1,7 @@
 body{
-	min-width: 565px;
-	min-height: 370px;
-	padding: 5px;
+	min-width: 557px;
+	min-height: 362px;
+	padding: 0; margin: 0;
 }
 
 #mp_container_extension, #mp_container_extension div{
@@ -18,8 +18,7 @@ body{
 }
 
 #mp_container_extension{
-	position: fixed; width: 555px; height: 360px;
-	top: 0; right: 0;
+	width: 555px; height: 360px;
 	border: 1px solid #c4c4c4;
 	z-index: 10000001;
 }

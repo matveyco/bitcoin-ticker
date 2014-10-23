@@ -29,12 +29,6 @@
     "128": "img/icon128.png"
   },
 
-  "content_scripts": [{
-      "matches": ["*://*/*"],
-      "css": ["content.css"]
-    }
-  ],
-
   "web_accessible_resources": [
       "frame_convertor.html",
       "frame_chart.html"
