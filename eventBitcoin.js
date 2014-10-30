@@ -1,9 +1,12 @@
 updateBadge(1);
+var IS_NORML = false;
 
 chrome.alarms.create('updateIcon', {periodInMinutes: 1});
 
-chrome.alarms.onAlarm.addListener(function(){
-	updateBadge(0);
+chrome.alarms.onAlarm.addListener(function(al){
+	if(al.name == 'updateIcon'){
+		updateBadge(0);
+	}
 });
 
 function updateBadge(start){
@@ -16,6 +19,14 @@ function updateBadge(start){
       	chrome.storage.local.get(function(items){
       		var previous_price_BTC = (items['price'])?items['price']:curr_price_BTC;
       		if(curr_price_BTC != previous_price_BTC || start == 1){
+      			if(!IS_NORML && start == 0){
+      				chrome.alarms.clear('updateIcon', function(wasClear){
+      					if(wasClear){
+      						chrome.alarms.create('updateIcon', {periodInMinutes: 15});
+      						IS_NORML = true;
+      					}
+      				});
+      			}
       			var today_open = jsonResponse.today_open;
       			var course_BTC;
 		  		if(curr_price_BTC >= today_open){
