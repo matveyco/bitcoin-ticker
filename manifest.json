@@ -3,7 +3,7 @@
 
   "name": "Bitcoin price",
   "description": "This extention check current bitcoin price from mining-profit.com.",
-  "version": "0.1",
+  "version": "1.0",
 
   "permissions": [
     "*://*/*",
