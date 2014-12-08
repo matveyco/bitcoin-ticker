@@ -99,7 +99,7 @@ function createIcon(curr_price_BTC, icon, up_down_rate, scale) {
 	c.lineTo(17*scale, 1*scale); c.lineTo(19*scale, 3*scale); c.lineTo(19*scale, 17*scale); c.lineTo(17*scale, 19*scale);
 	c.lineTo(3*scale, 19*scale); c.lineTo(1*scale, 17*scale); c.lineTo(1*scale, 3*scale); c.lineTo(3*scale, 1*scale);
 	c.fill();
-	c.drawImage(icon, 2*scale, 1*scale);
+	c.drawImage(icon, 3*scale, 2*scale);
 	c.drawImage(up_down_rate, 11*scale, 4*scale);
 	c.beginPath();
 	c.fillStyle = '#000';
@@ -108,7 +108,7 @@ function createIcon(curr_price_BTC, icon, up_down_rate, scale) {
 	var draw_price = ''+Math.round(curr_price_BTC);
 	var lng_draw_price = c.measureText(draw_price).width;
 	var left_margin = Math.floor((19*scale - lng_draw_price)/2);
-	c.fillText (draw_price, left_margin, 10*scale);
+	c.fillText (draw_price, left_margin + 2, 9*scale);
 	c.fill();
 	var imageData = c.getImageData(0, 0, 19*scale, 19*scale);
 	return imageData;
