@@ -94,11 +94,11 @@ function createIcon(curr_price_BTC, icon, up_down_rate, scale) {
 	var canvas = document.createElement('canvas');
 	var c = canvas.getContext('2d');
 	c.beginPath();
-	c.fillStyle = '#fff';
-	c.moveTo(3*scale, 1*scale);
-	c.lineTo(17*scale, 1*scale); c.lineTo(19*scale, 3*scale); c.lineTo(19*scale, 17*scale); c.lineTo(17*scale, 19*scale);
-	c.lineTo(3*scale, 19*scale); c.lineTo(1*scale, 17*scale); c.lineTo(1*scale, 3*scale); c.lineTo(3*scale, 1*scale);
-	c.fill();
+	// c.fillStyle = '#fff';
+	// c.moveTo(3*scale, 1*scale);
+	// c.lineTo(17*scale, 1*scale); c.lineTo(19*scale, 3*scale); c.lineTo(19*scale, 17*scale); c.lineTo(17*scale, 19*scale);
+	// c.lineTo(3*scale, 19*scale); c.lineTo(1*scale, 17*scale); c.lineTo(1*scale, 3*scale); c.lineTo(3*scale, 1*scale);
+	// c.fill();
 	c.drawImage(icon, 2*scale, 1*scale);
 	c.drawImage(up_down_rate, 11*scale, 4*scale);
 	c.beginPath();
