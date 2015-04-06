@@ -30,6 +30,8 @@
     "128": "img/app_icon128.png"
   },
 
+  "content_security_policy": "script-src 'self' https://www.google-analytics.com; object-src 'self'",
+ 
   "web_accessible_resources": [
       "frame_convertor.html",
       "frame_chart.html"
