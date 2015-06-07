@@ -43,13 +43,6 @@ body{
 	width: 335px; float: left; height: 280px;
 }
 
-#mp_container_extension .mp-chart .mp-bitstamp-label{
-	margin: 10px auto 10px auto; width: 93px; padding: 4px 0; 
-	text-align: center; font: normal 700 12px/12px Arial; color: #fff;
-	background-color: #428bca; border-radius: 3px;
-
-}
-
 #mp_container_extension .mp-info{
 	width: 206px; float: right; height: 100%; background-color: #e7e7e7;
 	padding-left: 12px;
