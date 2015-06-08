@@ -3,7 +3,7 @@
 
   "name": "Bitcoin Price Ticker and Converter",
   "description": "This extension shows the price of Bitcoin considering mining-profit.com data. Also, it includes Bitcoin-Fiat currencies converter.",
-  "version": "0.1.2",
+  "version": "0.1.3",
 
   "permissions": [
     "storage",
