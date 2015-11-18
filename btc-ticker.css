@@ -1,6 +1,6 @@
 body{
-	min-width: 557px;
-	min-height: 362px;
+	min-width: 730px;/*557px;*/
+	min-height: 452px;/*362px;*/
 	padding: 0; margin: 0;
 }
 
@@ -17,115 +17,173 @@ body{
 	box-sizing: content-box;
 }
 
-#mp_container_extension{
-	width: 555px; height: 360px;
+#mp_container_extension {
+	width: 728px;
+	height: 450px;
 	border: 1px solid #c4c4c4;
 	z-index: 10000001;
 }
 
-#mp_container_extension .up-ext{
-	height: 64px; width: 538px; background-color: #428bca; position: relative;
+#mp_container_extension .up-ext {
+	position: relative;
+	width: 711px;
+	height: 64px;
 	padding: 18px 0 0 17px;
+	background-color: #428bca; 
 }
 
-#mp_container_ext_close_cross{
-	height: 12px; width: 12px; position: absolute; top: 9px; right: 11px;
+#mp_container_ext_close_cross {
+	position: absolute;
+	width: 12px;
+	height: 12px;
+	top: 9px; right: 11px;
 	cursor: pointer; 
 	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAABLGlDQ1BJQ0MgcHJvZmlsZQAAeNqtjrFKw1AUQM+LouJQKwRxcHiTKCi26mDGpC1FEKzVIcnWpKFKaRJeXtV+hKNbBxd3v8DJUXBQ/AL/QHHq4BAhg4MInuncw+VywajYdadhlGEQa9VuOtL1fDn7xAxTANAJs9RutQ4A4iSO+MHnKwLgedOuOw3+xnyYKg1MgO1ulIUgKkD/QqcaxBgwg36qQdwBpjpp10A8AKVe7i9AKcj9DSgp1/NBfABmz/V8MOYAM8h9BTB1dKkBakk6Ume9Uy2rlmVJu5sEkTweZToaZHI/DhOVJqqjoy6Q/wfAYr7YbjpyrWpZe+v8M67ny9zejxCAWHosWkE4VOffKoyd3+fixngZDm9helK03Su42YCF66KtVqG8BffjL8DGT/2b2yonAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3ggODyowdqFQtAAAAOJJREFUKM9t0D8rhWEYBvD7nMGfkulsSslmOItiMVlO2SwGH0DxGWQ6SRllwTdA8gUMOoNiZ0CZdAxKIeXPz/K+ub2913Td13U913M/T2ART7jCTFSABdziAfOBTX+4xGQKz+Iu+WuBNm6SeIJhtNBLeg/jZVMH/WRu4yDN95iu7rqK9yLwiZ+CP2Mpah7XwI7/+MJ6zjUTH4yIoUpPMyJG0Khr3ygay+bvgr9ipXpgGS9plS3sprmPThmew2My9zGAUZwm/RrtwEUSj9BKN0/gPPnHgT184BBjNb83hTO8ofsLHpSBlSIIey8AAAAASUVORK5CYII=);
 	background-repeat: no-repeat;	
 }
 
-#mp_container_extension .down-ext{
-	height: 280px; width: 100%; background-color: #fff;
+#mp_container_extension .down-ext {
+	width: 100%;
+	height: 280px;
+	background-color: #fff;
 }
 
-#mp_container_extension .mp-chart{
-	width: 335px; float: left; height: 280px;
+#mp_container_extension .mp-chart {
+	float: left;
+	width: 508px;
+	height: 280px;
 }
 
-#mp_container_extension .mp-info{
-	width: 206px; float: right; height: 100%; background-color: #e7e7e7;
+#mp_container_extension .mp-info {
+	float: right;
+	width: 206px;
+	height: 100%;
 	padding-left: 12px;
+	background-color: #e7e7e7;
 }
 
-#mp_container_extension .mp-wrp-bigprice{
-	padding-top: 29px; height: 50px;
+#mp_container_extension .mp-wrp-bigprice {
+	height: 50px;
+	padding-top: 29px;
 }
 
-#mp_container_extension .big-price{
-	display: inline-block; float: left;
+#mp_container_extension .big-price {
+	float: left;
+	display: inline-block;
 }
 
-#mp_container_extension .big-price span{
-	display: inline-block; line-height: 1; vertical-align: top; font-family: Arial;
+#mp_container_extension .big-price span {
+	display: inline-block;
+	line-height: 1;
+	font-family: Arial;
+	vertical-align: top;
 }
 
-#mp_container_extension .big-price .course-icon{
-	font-weight: 400; font-size: 20px; color: #428bca;
+#mp_container_extension .big-price .course-icon {
+	font-size: 20px;
+	font-weight: 400;
+	color: #428bca;
 }
 
-#mp_container_extension .big-price .course-value{
-	font-weight: 700; color: #428bca; font-size: 45px; padding-top: 2px;
+#mp_container_extension .big-price .course-value {
+	padding-top: 2px;
+	font-size: 45px;
+	font-weight: 700;
+	color: #428bca;
 }
 
-#mp_container_extension .big-price-change{
-	float: left; padding: 15px 0 0 7px;
+#mp_container_extension .big-price-change {
+	float: left;
+	padding: 15px 0 0 7px;
 }
 
-#mp_container_extension .pch-arrow{
-	height:0;width:0; margin-left: 7px;
+#mp_container_extension .pch-arrow {
+	width: 0;
+	height: 0;
+	margin-left: 7px;
 }
 
-#mp_container_extension .pch-value{
-	font-weight: 400; font-size: 13px;
+#mp_container_extension .pch-value {
+	font-size: 13px;
+	font-weight: 400; 
 }
 
-#mp_container_extension .big-change-down .pch-arrow{
+#mp_container_extension .big-change-down .pch-arrow {
 	border-top: 12px solid #ec5300; 
-	border-left: 7px solid transparent; border-right: 7px solid transparent;
+	border-left: 7px solid transparent;
+	border-right: 7px solid transparent;
 }
 
-#mp_container_extension .big-change-down .pch-value{
+#mp_container_extension .big-change-down .pch-value {
 	color: #ec5300;
 }
 
-#mp_container_extension .big-change-up .pch-arrow{
+#mp_container_extension .big-change-up .pch-arrow {
 	border-bottom: 12px solid #63c700;
-	border-left: 7px solid transparent; border-right: 7px solid transparent;
+	border-left: 7px solid transparent;
+	border-right: 7px solid transparent;
 }
 
-#mp_container_extension .big-change-up .pch-value{
+#mp_container_extension .big-change-up .pch-value {
 	color: #63c700;
 }
 
-#mp_container_extension .mp-wrp-price-details{
-	padding-top: 20px; padding-right: 6px;
+#mp_container_extension .mp-wrp-price-details {
+	padding-top: 20px;
+	padding-right: 6px;
 }
 
-#mp_container_extension .price-detail-row{
-	padding-top: 4px; height: 31px;
+#mp_container_extension .price-detail-row {
+	height: 31px;
+	padding-top: 4px;
 }
 
-#mp_container_extension .price-detail-row.bott-bord{
+#mp_container_extension .price-detail-row.bott-bord {
 	border-bottom: 1px solid #d0d0d0;
 }
 
-#mp_container_extension .price-detail-col-left{
-	font-weight: 400; font-size: 13px; color: #909090; line-height: 31px;
-	padding-left: 5px; width: 100px; float: left; text-align: left;
+#mp_container_extension .price-detail-col-left {
+	float: left;
+	width: 100px;
+	padding-left: 5px;
+	font-size: 13px;
+	line-height: 31px;
+	color: #909090;
+	font-weight: 400;
+	text-align: left;
 }
 
-#mp_container_extension .price-detail-col-right{
-	font-weight: 700; font-size: 13px; color: #428bca; line-height: 31px;
-	padding-right: 8px; float: right; text-align: right;
+#mp_container_extension .price-detail-col-right {
+	float: right;
+	padding-right: 8px;
+	font-size: 13px;
+	line-height: 31px;
+	color: #428bca;
+	font-weight: 700;
+	text-align: right;
 }
 
-#mp_container_extension .mp-powered{
-	font-weight: 400; font-size: 12px; line-height: 1; color: #717171; 
-	padding-right: 14px; padding-top: 35px; height: 12px; text-align: right;
+#mp_container_extension .mp-powered {
+	height: 12px;
+	padding-top: 35px;
+	padding-right: 14px;
+	font-size: 12px;
+	line-height: 1;
+	color: #717171;
+	font-weight: 400;
+	text-align: right;
 }
 
-#mp_container_extension .mp-powered .powered-link{
-	font-weight: 400; font-size: 12px; line-height: 1; color: #57a7e6;
-	text-decoration: underline; cursor: pointer;
+#mp_container_extension .mp-powered .powered-link {
+	font-size: 12px;
+	line-height: 1;
+	color: #57a7e6;
+	font-weight: 400;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+#bitm_wrap {
+	width: 100%;
+	height: 90px;
 }

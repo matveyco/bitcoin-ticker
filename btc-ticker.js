@@ -33,6 +33,7 @@ function fillOutInfo(e){
 
 document.addEventListener('DOMContentLoaded', function () {
   	sendReqData();
+
   	document.getElementById('mp_container_ext_close_cross').onclick = function(){
 		window.close();
 	}
@@ -41,6 +42,14 @@ document.addEventListener('DOMContentLoaded', function () {
 	}
 });
 
+(function() {
+	var script = document.createElement('script');
+	script.async = 1;
+	script.type = 'application/javascript';
+	script.src = 'https://ad.bitmedia.io/js/adbybm.js/5642098a8adf218d7c894015';
+	document.getElementsByTagName('head')[0].appendChild(script);
+})();
+
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -48,4 +57,4 @@ document.addEventListener('DOMContentLoaded', function () {
 
 ga('create', 'UA-45756917-2', 'auto');
 ga('set', 'checkProtocolTask', function(){});
-ga('send', 'pageview', '/btc-ticker-back.html');
+ga('send', 'pageview', '/btc-ticker-back.html'); 

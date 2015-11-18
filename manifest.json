@@ -30,7 +30,7 @@
     "128": "img/app_icon128.png"
   },
 
-  "content_security_policy": "script-src 'self' https://www.google-analytics.com; object-src 'self'",
+  "content_security_policy": "script-src 'self' https://www.google-analytics.com https://ad.bitmedia.io; object-src 'self'",
  
   "web_accessible_resources": [
       "frame_convertor.html",
